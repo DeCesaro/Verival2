@@ -2,6 +2,7 @@ language: java
 script:
   - mvn test
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - mvn test -f ./nutritechAPI/pom.xml
 jdk:
   - oraclejdk11
 services:
@@ -15,4 +16,3 @@ deploy:
     skip_cleanup: true
     on:
     tags: true
-script: mvn test -f ./nutritechAPI/pom.xml
