@@ -1,14 +1,14 @@
 language: java
 script:
- - mvn test
- - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - mvn test
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 jdk:
- - oraclejdk11
- services:
-- docker
+  - oraclejdk11
+services:
+  - docker
 cache:
 directories:
-    - "$HOME/.cache"
+  - "$HOME/.cache"
 deploy:
     provider: script
     script: "cp .travis.settings.xml $HOME/.m2/settings.xml && mvn deploy"
@@ -16,4 +16,4 @@ deploy:
     on:
     tags: true
 before_install:
-    script: mvn test -f ./pom.xml
+    script: mvn test -f ./nutritechAPI/pom.xml
