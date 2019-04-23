@@ -16,4 +16,4 @@ deploy:
     on:
     tags: true
 before_install:
-script: mvn test -f ./nutritechAPI/pom.xml
+    script: mvn test -f ./pom.xml
