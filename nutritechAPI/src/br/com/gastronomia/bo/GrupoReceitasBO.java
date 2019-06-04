@@ -16,7 +16,7 @@ import br.com.gastronomia.util.MensagemContantes;
 import br.com.gastronomia.util.Validator;
 
 public class GrupoReceitasBO {
-	private GrupoReceitasDAO grupoReceitasDAO;
+	private static GrupoReceitasDAO grupoReceitasDAO;
 
 	public GrupoReceitasBO() {
 		grupoReceitasDAO = new GrupoReceitasDAO();
@@ -40,7 +40,7 @@ public class GrupoReceitasBO {
 
 	}
 
-	public long deactivateGroup(long id) throws ValidationException  {
+	public static long deactivateGroup(long id) throws ValidationException  {
 
 		ReceitaDAO receitaDAO = new ReceitaDAO();
 		List<Receita> receitas = receitaDAO.listAllReceitas();
@@ -54,7 +54,7 @@ public class GrupoReceitasBO {
 		return grupoReceitasDAO.alterStatus(id, false);
 	}
 
-	public long activateGroup(long id) throws ValidationException  {
+	public static long activateGroup(long id) throws ValidationException  {
 		return grupoReceitasDAO.alterStatus(id, true);
 	}
 

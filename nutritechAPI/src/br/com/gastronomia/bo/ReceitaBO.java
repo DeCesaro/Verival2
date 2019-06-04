@@ -12,17 +12,17 @@ import java.util.List;
 
 public class ReceitaBO {
 
-    private ReceitaDAO receitaDAO;
+    private static ReceitaDAO receitaDAO;
 
     public ReceitaBO() {
         receitaDAO = new ReceitaDAO();
     }
 
-    public long inactiveReceita(long id) throws ValidationException  {
+    public static long inactiveReceita(long id) throws ValidationException  {
         return receitaDAO.alterStatus(id, false);
     }
 
-    public long activateReceita(long id) throws ValidationException  {
+    public static long activateReceita(long id) throws ValidationException  {
         return receitaDAO.alterStatus(id, true);
     }
 

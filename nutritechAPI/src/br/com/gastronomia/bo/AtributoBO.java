@@ -18,7 +18,7 @@ import br.com.gastronomia.util.MensagemContantes;
 import br.com.gastronomia.util.Validator;
 //branch demo
 public class 	AtributoBO {
-	private AtributoDAO atributoDAO;
+	private static AtributoDAO atributoDAO;
 
 	public AtributoBO() {
 		atributoDAO = new AtributoDAO();
@@ -43,7 +43,7 @@ public class 	AtributoBO {
 
 	}
 
-	public long inactiveAtributo(long id) throws ValidationException {
+	public static long inactiveAtributo(long id) throws ValidationException {
 		ReceitaDAO receitaDAO = new ReceitaDAO();
 		List<Receita> receitas = receitaDAO.listAllReceitas();
 
@@ -60,7 +60,7 @@ public class 	AtributoBO {
 		return atributoDAO.alterStatus(id, false);
 	}
 
-	public long activateUser(long id) throws ValidationException {
+	public static long activateAtributo(long id) throws ValidationException {
 		return atributoDAO.alterStatus(id, true);
 	}
 

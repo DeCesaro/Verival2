@@ -17,7 +17,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.*;
 
 public class IngredienteBO {
-	private IngredienteDAO ingredienteDAO;
+	private static IngredienteDAO ingredienteDAO;
 	private UsuarioDAO usuarioDAO;
 	private AtributoDAO atributoDAO;
 	private ReceitaDAO receitaDAO;
@@ -30,7 +30,7 @@ public class IngredienteBO {
 	}
 
 
-	public long inactiveIngrediente(long id) throws ValidationException  {
+	public static long inactiveIngrediente(long id) throws ValidationException  {
 		if (id > 0){
 			List<Ingrediente> ingredientes = ingredienteDAO.findReceitaIngredienteByIdIngrediente(id);
 			if (ingredientes.size() > 0)
@@ -39,7 +39,7 @@ public class IngredienteBO {
 		return ingredienteDAO.alterStatus(id, false);
 	}
 
-	public long activateIngrediente(long id) throws ValidationException  {
+	public static long activateIngrediente(long id) throws ValidationException  {
 		return ingredienteDAO.alterStatus(id, true);
 	}
 
