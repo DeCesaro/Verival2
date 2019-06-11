@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_nutritechapi" default="compile.module.nutritechapi">
+  <dirname property="module.nutritechapi.basedir" file="${ant.file.module_nutritechapi}"/>
+  
+  <property name="module.jdk.home.nutritechapi" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.nutritechapi" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.nutritechapi" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.nutritechapi" value="-encoding UTF-8 -source 11 -target 11 ${compiler.args}"/>
+  
+  <property name="nutritechapi.output.dir" value="${module.nutritechapi.basedir}/../out/production/nutritechAPI"/>
+  <property name="nutritechapi.testoutput.dir" value="${module.nutritechapi.basedir}/../out/test/nutritechAPI"/>
+  
+  <path id="nutritechapi.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="nutritechapi.module.production.classpath">
+    <path refid="${module.jdk.classpath.nutritechapi}"/>
+    <path refid="library.lib1.classpath"/>
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  <path id="nutritechapi.runtime.production.module.classpath">
+    <pathelement location="${nutritechapi.output.dir}"/>
+    <path refid="library.lib1.classpath"/>
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  <path id="nutritechapi.module.classpath">
+    <path refid="${module.jdk.classpath.nutritechapi}"/>
+    <pathelement location="${nutritechapi.output.dir}"/>
+    <path refid="library.lib1.classpath"/>
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  <path id="nutritechapi.runtime.module.classpath">
+    <pathelement location="${nutritechapi.testoutput.dir}"/>
+    <pathelement location="${nutritechapi.output.dir}"/>
+    <path refid="library.lib1.classpath"/>
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.nutritechapi">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.nutritechapi">
+    <patternset refid="excluded.from.module.nutritechapi"/>
+  </patternset>
+  
+  <path id="nutritechapi.module.sourcepath">
+    <dirset dir="${module.nutritechapi.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  <path id="nutritechapi.module.test.sourcepath">
+    <dirset dir="${module.nutritechapi.basedir}">
+      <include name="test"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.nutritechapi" depends="compile.module.nutritechapi.production,compile.module.nutritechapi.tests" description="Compile module nutritechAPI"/>
+  
+  <target name="compile.module.nutritechapi.production" depends="register.custom.compilers" description="Compile module nutritechAPI; production classes">
+    <mkdir dir="${nutritechapi.output.dir}"/>
+    <javac2 destdir="${nutritechapi.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.nutritechapi}/javac">
+      <compilerarg line="${compiler.args.nutritechapi}"/>
+      <bootclasspath refid="nutritechapi.module.bootclasspath"/>
+      <classpath refid="nutritechapi.module.production.classpath"/>
+      <src refid="nutritechapi.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.nutritechapi"/>
+    </javac2>
+    
+    <copy todir="${nutritechapi.output.dir}">
+      <fileset dir="${module.nutritechapi.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.nutritechapi.tests" depends="register.custom.compilers,compile.module.nutritechapi.production" description="compile module nutritechAPI; test classes" unless="skip.tests">
+    <mkdir dir="${nutritechapi.testoutput.dir}"/>
+    <javac2 destdir="${nutritechapi.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.nutritechapi}/javac">
+      <compilerarg line="${compiler.args.nutritechapi}"/>
+      <bootclasspath refid="nutritechapi.module.bootclasspath"/>
+      <classpath refid="nutritechapi.module.classpath"/>
+      <src refid="nutritechapi.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.nutritechapi"/>
+    </javac2>
+    
+    <copy todir="${nutritechapi.testoutput.dir}">
+      <fileset dir="${module.nutritechapi.basedir}/test">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.nutritechapi" description="cleanup module">
+    <delete dir="${nutritechapi.output.dir}"/>
+    <delete dir="${nutritechapi.testoutput.dir}"/>
+  </target>
+</project>
