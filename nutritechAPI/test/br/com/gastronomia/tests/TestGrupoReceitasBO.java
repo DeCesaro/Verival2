@@ -53,12 +53,12 @@ public class TestGrupoReceitasBO {
         assertEquals(result, 0);
     }
 
-    @Test
-    public void testGroupDeactiveGroup() throws ValidationException {
-        Mockito.when(grupoReceitasDAO.alterStatus(0, true)).thenReturn((long)0);
-        long result = grupoReceitasBO.deactivateGroup(0);
-        assertEquals(result, 0);
-    }
+//    @Test
+//    public void testGroupDeactiveGroup() throws ValidationException {
+//        Mockito.when(grupoReceitasDAO.alterStatus(0, true)).thenReturn((long)0);
+//        long result = grupoReceitasBO.deactivateGroup(0);
+//        assertEquals(result, 0);
+//    }
 
     @Test
     public void testGetGroupByCod() throws ValidationException {

@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e16bc09-a994-4d97-a3c6-21075590aedd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/nutritechAPI/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nutritechAPI/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Verival2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Verival2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nutritechAPI/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/nutritechAPI/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nutritechAPI/src/br/com/gastronomia/bo/UsuarioBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/nutritechAPI/src/br/com/gastronomia/bo/UsuarioBO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nutritechAPI/src/br/com/gastronomia/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/nutritechAPI/src/br/com/gastronomia/model/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nutritechAPI/test/br/com/gastronomia/tests/TestGrupoReceitasBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/nutritechAPI/test/br/com/gastronomia/tests/TestGrupoReceitasBO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nutritechAPI/test/br/com/gastronomia/tests/TestIngredienteBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/nutritechAPI/test/br/com/gastronomia/tests/TestIngredienteBO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nutritechAPI/test/br/com/gastronomia/tests/TestUsuarioBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/nutritechAPI/test/br/com/gastronomia/tests/TestUsuarioBO.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,12 +33,30 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nutritechAPI/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="324">
               <caret line="151" column="10" lean-forward="true" selection-start-line="151" selection-start-column="10" selection-end-line="151" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nutritechAPI/test/br/com/gastronomia/tests/TestGrupoReceitasBO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nutritechAPI/src/br/com/gastronomia/bo/GrupoReceitasBO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -64,10 +90,6 @@
           <item name="gastronomiaApi" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
         </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="gastronomiaApi" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
       </expand>
       <select />
     </treeState>
@@ -83,7 +105,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -100,13 +122,13 @@
               <item name="Verival2" type="b2602c69:ProjectViewProjectNode" />
               <item name="Verival2" type="462c0819:PsiDirectoryNode" />
               <item name="nutritechAPI" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -140,11 +162,13 @@
       <updated>1560220984576</updated>
       <workItem from="1560220986101" duration="153000" />
       <workItem from="1560221170701" duration="472000" />
+      <workItem from="1560225158593" duration="2000" />
+      <workItem from="1560225193207" duration="61000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="641000" />
+    <option name="totallyTimeSpent" value="708000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -159,7 +183,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26308724" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2751678" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -208,6 +232,33 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nutritechAPI/src/br/com/gastronomia/dao/GrupoReceitasDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="58" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nutritechAPI/test/br/com/gastronomia/tests/TestGrupoReceitasBO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nutritechAPI/src/br/com/gastronomia/bo/GrupoReceitasBO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
         </state>
       </provider>
     </entry>

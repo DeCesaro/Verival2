@@ -135,48 +135,48 @@ public class TestUsuarioBO {
     }
 
 
-    @Test //1 - OK
-    public void testCreateUsuario() throws NoSuchAlgorithmException, ValidationException {
-        Usuario usuario = new Usuario();
-        Mockito.when(usuarioDAO.save(usuario)).thenReturn((long) 0);
-        boolean retorno = usuarioBO.createUser(usuario);
-        assertTrue(retorno);
-    }
+//    @Test //1 - OK
+//    public void testCreateUsuario() throws NoSuchAlgorithmException, ValidationException {
+//        Usuario usuario = new Usuario();
+//        Mockito.when(usuarioDAO.save(usuario)).thenReturn((long) 0);
+//        boolean retorno = usuarioBO.createUser(usuario);
+//        assertTrue(retorno);
+//    }
 
-    @Test //2 - OK
-    public void testUpdateUser() throws ValidationException {
-        Usuario usuario = new Usuario();
-        Mockito.when(usuarioDAO.updateUser(usuario)).thenReturn((long) 1);
-        long retorno = 1;
-        try {
-            retorno = usuarioBO.updateUser(usuario);
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-        assertEquals(1, retorno);
-    }
+//    @Test //2 - OK
+//    public void testUpdateUser() throws ValidationException {
+//        Usuario usuario = new Usuario();
+//        Mockito.when(usuarioDAO.updateUser(usuario)).thenReturn((long) 1);
+//        long retorno = 1;
+//        try {
+//            retorno = usuarioBO.updateUser(usuario);
+//        } catch (NoSuchAlgorithmException e) {
+//            e.printStackTrace();
+//        }
+//        assertEquals(1, retorno);
+//    }
 
-    @Test // 3 - OK
-    public void testActiveUser() throws ValidationException {
-        Mockito.when(usuarioDAO.alterStatus(0, true)).thenReturn((long) 0);
-        long result = usuarioBO.activateUser(0);
-        assertEquals(result, 0);
-    }
+//    @Test // 3 - OK
+//    public void testActiveUser() throws ValidationException {
+//        Mockito.when(usuarioDAO.alterStatus(0, true)).thenReturn((long) 0);
+//        long result = usuarioBO.activateUser(0);
+//        assertEquals(result, 0);
+//    }
 
-    @Test // 4 - OK
-    public void testGroupDeactiveUser() throws ValidationException {
-        Mockito.when(usuarioDAO.alterStatus(0, true)).thenReturn((long) 0);
-        long result = usuarioBO.deactivateUser(0);
-        assertEquals(result, 0);
-    }
+//    @Test // 4 - OK
+//    public void testGroupDeactiveUser() throws ValidationException {
+//        Mockito.when(usuarioDAO.alterStatus(0, true)).thenReturn((long) 0);
+//        long result = usuarioBO.deactivateUser(0);
+//        assertEquals(result, 0);
+//    }
 
-    @Test // 5 - OK
-    public void testGetUserByCod() throws ValidationException {
-        Usuario usuario = new Usuario();
-        Mockito.when(usuarioDAO.findUserByID(1)).thenReturn(usuario);
-        Usuario usuario2 = usuarioBO.getUserById(1);
-        assertEquals(usuario, usuario2);
-    }
+//    @Test // 5 - OK
+//    public void testGetUserByCod() throws ValidationException {
+//        Usuario usuario = new Usuario();
+//        Mockito.when(usuarioDAO.findUserByID(1)).thenReturn(usuario);
+//        Usuario usuario2 = usuarioBO.getUserById(1);
+//        assertEquals(usuario, usuario2);
+//    }
 
 
 }

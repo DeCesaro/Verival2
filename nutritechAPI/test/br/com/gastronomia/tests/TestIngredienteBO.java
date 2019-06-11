@@ -5,6 +5,7 @@ import br.com.gastronomia.dao.IngredienteDAO;
 import br.com.gastronomia.dto.IngredienteCadastroDTO;
 import br.com.gastronomia.exception.ValidationException;
 import br.com.gastronomia.model.Ingrediente;
+import br.com.gastronomia.model.Usuario;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,38 +36,38 @@ public class TestIngredienteBO {
     IngredienteDAO ingredienteDAO;
 
     @Mock
-    IngredienteCadastroDTO ingredienteCadastroDTO;
+    Ingrediente ingrediente;
 
     @Before
     public void init() throws ValidationException, NoSuchAlgorithmException {
-//        ingredienteBO = new IngredienteBO();
+        ingredienteBO = new IngredienteBO();
+
+        ingrediente = new Ingrediente();
+        ingrediente.setNome("Farinha");
+        ingrediente.setCriador(new Usuario(1));
+        ingrediente.setOrigem("TACO");
+        ingrediente.setStatus(true);
+        ingrediente.setTipo(PRIVADO);
+
+        ingredienteBO.createIngrediente(ingrediente);
+    }
+
+
+//    @Test
+//    public void testListaIngredientes() {
+//        ArrayList<Ingrediente> listaDeIngredientes = new ArrayList<>();
+//        Ingrediente ingrediente = new Ingrediente();
+//        listaDeIngredientes.add(ingrediente);
 //
-//        ingredienteCadastroDTO = new IngredienteCadastroDTO();
-//        ingredienteCadastroDTO.setNome("Farinha");
-//        ingredienteCadastroDTO.setIdCriador(1L);
-//        ingredienteCadastroDTO.setOrigem("TACO");
-//        ingredienteCadastroDTO.setStatus(true);
-//        ingredienteCadastroDTO.setTipo(PRIVADO);
+//        assertEquals(listaDeIngredientes.size(), 1);
+//    }
 //
-//        ingredienteBO.createIngrediente(ingredienteCadastroDTO);
-    }
-
-
-    @Test
-    public void testListaIngredientes() {
-        ArrayList<Ingrediente> listaDeIngredientes = new ArrayList<>();
-        Ingrediente ingrediente = new Ingrediente();
-        listaDeIngredientes.add(ingrediente);
-
-        assertEquals(listaDeIngredientes.size(), 1);
-    }
-
-    @Test
-    public void testInactiveIngredient() throws ValidationException {
-
-        Mockito.when(ingredienteDAO.alterStatus(1, false)).thenReturn((long)1);
-
-		assertEquals(false, ingredienteDAO);
-
-    }
+//    @Test
+//    public void testInactiveIngredient() throws ValidationException {
+//
+//        Mockito.when(ingredienteDAO.alterStatus(1, false)).thenReturn((long)1);
+//
+//		assertEquals(false, ingredienteDAO);
+//
+//    }
 }

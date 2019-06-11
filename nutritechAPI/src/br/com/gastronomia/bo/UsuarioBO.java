@@ -11,12 +11,11 @@ import br.com.gastronomia.dto.UsuarioLoginDTO;
 import br.com.gastronomia.exception.UsuarioInativoException;
 import br.com.gastronomia.exception.ValidationException;
 import br.com.gastronomia.model.Usuario;
+import org.hibernate.exception.ConstraintViolationException;
 import br.com.gastronomia.util.EncryptUtil;
 import br.com.gastronomia.util.MensagemContantes;
 import br.com.gastronomia.util.Validator;
 import br.com.gastronomia.util.SendMail;
-
-import org.hibernate.exception.ConstraintViolationException;
 
 public class UsuarioBO {
 	
